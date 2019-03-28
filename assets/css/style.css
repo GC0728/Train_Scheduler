@@ -1,0 +1,14 @@
+#bannerBack{
+    padding:25px;
+    background-color:black;
+    color:white;
+}
+
+body {
+    background-image: url(https://cdnb.artstation.com/p/assets/images/images/005/160/781/large/aeryn-gray-17.jpg?1488934251);
+
+}
+.form-control {
+    margin-bottom:15px;
+    background-color:black;
+}

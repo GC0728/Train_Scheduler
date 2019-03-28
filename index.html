@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 id="bannerBack" class="text-center">
+            TRAIN SCHEDULER
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (min)</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Time Until Arrival</th>
+              </tr>
+            </thead>
+            <tbody id="schedule">
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col">
+                <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">Add Train</label>
+                          <input type="text" id="inputTrain"        class="form-control" placeholder="Train Name">
+                          <input type="text" id="inputDestination"  class="form-control" placeholder="Destination">
+                          <input type="text" id="inputFrequency"    class="form-control" placeholder="Frequency">
+                          <input type="text" id="inputNext"         class="form-control" placeholder="Next Arrival">
+                          <input type="text" id="inputTime"         class="form-control" placeholder="First Train Time">
+                        </div>
+          </div>
+      </div>
+      <div class="row">
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-outline-warning btn-large"> SUBMIT </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      rel="text/javascript"
+      src="assets/javascript/javascript.js"
+    ></script>
+  </body>
+</html>
