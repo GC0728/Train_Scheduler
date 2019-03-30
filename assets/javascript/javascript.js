@@ -49,7 +49,7 @@ $(".btn").on("click", function(event) {
 // WRITE FROM FIREBASE TO HTML
 database.ref().on("child_added", function(childSnapshot) {
   event.preventDefault();
-  var nexTrain = minutesPending(childSnapshot.val().time, childSnapshot.val().frequency);
+ var nexTrain = minutesPending(childSnapshot.val().time, childSnapshot.val().frequency);
   console.log(childSnapshot);
   $("#schedule").append(`
     <tr> 
@@ -107,7 +107,7 @@ function minutesPending(firstTrain, frequency) {
     console.log(nextTrain);
   }
   console.log("Next Train Arrival Time:", nextTrain.format("mm"));
-  return nextTrain;
+  return remainder;
 }
 // console.log(minutesPending);
 
