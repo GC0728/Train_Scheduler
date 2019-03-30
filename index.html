@@ -29,28 +29,27 @@
               <tr>
                 <th scope="col">Train Name</th>
                 <th scope="col">Destination</th>
+                <th scope="col">First Train Time (HH:mm - military time)</th>
                 <th scope="col">Frequency (min)</th>
-                <th scope="col">Next Arrival</th>
-                <th scope="col">Time Until Arrival</th>
               </tr>
             </thead>
             <tbody id="schedule">
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+                <th scope="row"> </th>
+                <td>Lo-Town</td>
                 <td>Otto</td>
                 <td>@mdo</td>
                 <td>@mdo</td>
               </tr>
               <tr>
-                <th scope="row">2</th>
+                <th scope="row"> </th>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
                 <td>@fat</td>
               </tr>
               <tr>
-                <th scope="row">3</th>
+                <th scope="row"> </th>
                 <td colspan="2">Larry the Bird</td>
                 <td>@twitter</td>
                 <td>@twitter</td>
@@ -63,26 +62,24 @@
           <div class="col">
                 <form>
                         <div class="form-group">
-                          <label for="exampleFormControlInput1">Add Train</label>
+                          <h3 class="bg-primary text-center"> Add Train </h3>
                           <input type="text" id="inputTrain"        class="form-control" placeholder="Train Name">
                           <input type="text" id="inputDestination"  class="form-control" placeholder="Destination">
-                          <input type="text" id="inputFrequency"    class="form-control" placeholder="Frequency">
-                          <input type="text" id="inputNext"         class="form-control" placeholder="Next Arrival">
-                          <input type="text" id="inputTime"         class="form-control" placeholder="First Train Time">
+                          <input type="time" id="inputTime"         class="form-control" placeholder="First Train Time (HH:mm - military time">
+                          <input type="text" id="inputFrequency"    class="form-control" placeholder="Frequency (min)">
                         </div>
           </div>
       </div>
       <div class="row">
             <div class="col-12 text-center">
-                <button type="button" class="btn btn-outline-warning btn-large"> SUBMIT </button>
+                <button type="button" class="btn btn-outline-warning btn-large font-weight-bold"> SUBMIT </button>
             </div>
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-      rel="text/javascript"
-      src="assets/javascript/javascript.js"
-    ></script>
+    <script src ="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script rel="text/javascript" src="assets/javascript/javascript.js"></script>
   </body>
 </html>
