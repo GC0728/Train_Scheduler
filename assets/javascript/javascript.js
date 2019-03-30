@@ -12,14 +12,12 @@ var config = {
 
 // DECLARE VARIABLE TO CALL FIREBASE DATABASE
   var database = firebase.database();
-  console.log(database);
 
 // GLOBAL VARIABLES
 var train = "";
 var destination = "";
 var trainTime;
 var frequency;
-var scheduler = [];
 
 // SELECTORS
 
@@ -40,35 +38,76 @@ $(".btn").on("click", function(event) {
         destination: destination,
         frequency: frequency,
         time: time
-})
+});
+});
+
+// WRITE FROM FIREBASE TO HTML
+    database.ref().on("value", function(snapshot) {
+        event.preventDefault();
+        var nexTrain = minutesPending(snapshot.val().time, snapshot.val().frequency);
+      //  $("#schedule").empty();
+        $("#schedule").append(`
+    <tr> 
+        <th> ${snapshot.val().train} </th> 
+        <td> ${snapshot.val().destination} </td> 
+        <td> ${snapshot.val().time} </td> 
+        <td> ${snapshot.val().frequency} </td> 
+        <td> ${nexTrain} </td>
+    </tr> 
+        `);
+        $(".form-control").val("");
+    });
 
 // STORE INPUT VALUES IN ARRAY    
-    scheduler.push(train);
+/*  scheduler.push(train);
     scheduler.push(destination);
     scheduler.push(time);
+    console.log(time);
     scheduler.push(frequency);
-    console.log(scheduler);
-
+    console.log(scheduler); */
 
 // APPEND USER INPUT TO TRAIN SCHEDULER
-var newTrain = $("<th>");
-newTrain.text(scheduler[0]);
 // for (i = 0; i < scheduler.length; i++) {
-$("#schedule").append(`
+ /*   var newTrain = $("<th>");
+    newTrain.text(scheduler[0]);
+ $("#schedule").append(`
 <tr> 
     <th> ${scheduler[0]} </th> 
     <td> ${scheduler[1]} </td> 
     <td> ${scheduler[2]} </td> 
     <td> ${scheduler[3]} </td> 
 </tr> 
-`);
+`); */
 
 // RESET FORM/CLEAR ARRAY
 $(".form-control").val("");
-scheduler.length = 0;
-
-});
+// scheduler.length = 0;
 
 
+// MOMENT.JS
+function minutesPending(firstTrain, frequency) {
+    var realTime = moment();
+    var openShift = moment(firstTrain, "HH:mm");
+
+    var timeRemainder = 0;
+console.log(realTime);
+
+if (openShift > realTime) {
+    timeRemainder = openShift.diff(realTime, "minutes");
+} else {
+    var minutesPast = realTime.diff(openShift, "minutes");
+    var remainder = minutesPast % frequency;
+    timeRemainder = frequency - remainder;
+    console.log(minutesTilNextTrain);
+    nextTrain = realTime.add(minutesTilNextTrain, "minutes");
+    console.log(nextTrain);
+}
+console.log("Next Train Arrival Time:", nextTrain.format("hh:mm A"));
+return minutesPending;
+
+};
+console.log(minutesPending);
 
 
+
+moment().format("hh:mm:ss a");
